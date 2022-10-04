@@ -1,0 +1,15 @@
+article{
+    padding: 10px;
+    border-bottom: 1px solid #000;
+    transition: all ease-in-out 150ms;
+}
+article:hover{
+    background-color: blueviolet;
+    color: #fff;
+}
+article:hover cite:before{
+    content: "-";
+}
+article:hover cite b{
+    text-decoration: underline;
+}
