@@ -1,5 +1,79 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;400;700&display=swap');
 
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
 body{
     font-family: 'Lato', sans-serif;
+    width: 100vw;
+}
+h1{
+    text-align: center;
+}
+.fila_dos_columnas{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+    height: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.fila_dos_columnas :nth-child(1){
+    width: 40%;
+}
+.fila_dos_columnas :nth-child(2){
+    width: 40%;
+}
+.profile{
+    height: auto;
+}
+
+.profile img#profile{
+    height: 220px;
+    width: 210px;
+}
+.libros{
+    padding: 10px;
+}
+.libros h2{
+    text-align: center;
+}
+
+.articulo{
+    margin: 0px auto;
+    width: 98%;
+    border: .5px solid #000;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.articulo img.portada{
+    object-fit: cover;
+    height: 320px;
+    width: 210px;
+}
+.opciones{
+    width: 100%;
+}
+
+.articulo h3{
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
+}
+.articulo h5{
+    padding: 10px;
+}
+
+.articulo .opciones ul{
+    width: 100%;
+}
+.articulo .opciones li{
+    width: 100%;
 }
