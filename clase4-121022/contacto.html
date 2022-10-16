@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li>  <a href="/index.html"> Inicio  </a> </li>
+                <li> <a href="./categorias.html">  Categorias </a> </li>
+                <li> <a href="./carrito.html"> Mi carrito</a> </li>
+                <li> <a href="./contacto.html">Contacto</a> </li>
+            </ul>
+        </nav>
+    </header>
+    <h1>Contactanos</h1>
+
+
+    <h4>Dejanos tu mensaje por medio de este formulario</h4>
+    <form>
+        <label for="nombre">Nombre</label>
+        <br>
+        <input id="nombre" type="text" placeholder="Ej. Gaston Avila" required>
+        <br>
+        <label for="email"> Email </label>
+        <br>
+        <input required id="email" type="email" placeholder="Ej. mail@mail.com" >
+        <br>
+        <label for="nacimiento">Fecha de nacimiento</label>
+        <br>
+        <input id="nacimiento" type="date">
+        <br>
+        <label for="terminos">Acepto todos los terminos</label>
+        <input id="terminos" type="checkbox">
+        <br>
+        <input type="reset">
+        <input type="submit" value="Enviar">
+    </form>
+<hr>
+<br>
+
+    <form>
+        <fieldset>
+
+      <legend>Iniciar Sesion</legend>
+        <label for="usuario">Usuario</label>
+        <br>
+        <input id="usuario" type="text" required>
+        <br>
+        <label for="contrasenia">Contraseña</label>
+        <br>
+        <input id="contrasenia" type="password" required>
+        <br>
+        <input type="submit" value="Enviar">
+    </fieldset>
+       
+    </form>
+
+    <hr>
+    <h2>Pruebas de diferentes inputs</h2>
+
+    <form>
+        <input type="color">
+        <br>
+        <input type="month">
+        <br>
+        <input type="number" min="0" max="10">
+        <br>
+        <fieldset>
+            <legend>Selecciona uno</legend>
+            <input type="radio" name="genero" id="hombre" value="hombre">
+            <label for="hombre">Hombre</label>
+            <br>
+            <input type="radio" name="genero" id="mujer" value="mujer">
+            <label for="mujer">Mujer</label>
+            <br>
+            <input type="radio"  name="genero" id="otro" value="otro">
+            <label for="otro">Otro</label>
+        </fieldset>
+
+
+        <fieldset>
+            <legend>Seleccione genero</legend>
+            <select name="" id="">
+                <option value="hombre">Hombre</option>
+                <option value="mujer">Mujer</option>
+                <option value="otro">Otro</option>
+            </select>
+        </fieldset>
+
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+        <input type="range">
+        <br>
+        <input type="submit" value="Enviar">
+    </form>
+
+</body>
+</html>
