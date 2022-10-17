@@ -12,38 +12,38 @@
         <nav>
             <ul>
                 <li>  <a href="/index.html">Inicio</a> </li>
-                <li> <a href="./categorias.html">Categorias</a> </li>
-                <li> <a href="./carrito.html">Mi carrito</a> </li>
-                <li> <a href="./contacto.html">Contacto</a> </li>
                 <li> <a href="./login.html">Iniciar sesión</a> </li>
-                <li> <a href="./registro.html">Registrarse</a> </li>
+                <li> <a class="focus" href="./registro.html">Registrarse</a> </li>
             </ul>
         </nav>
     </header>
-    <h1>Registro</h1>
-    <form>
-        <label for="nombrecompleto">Nombre y Apellido</label>
-        <br>
-        <input id="nombrecompleto" type="text" required>
-        <br>
-        <label for="nacimiento">Fecha de nacimiento</label>
-        <br>
-        <input id="nacimiento" type="date" min="2022-01-01" max="2022-10-17" required>
-        <br>
-        <label for="email">Email</label>
-        <br>
-        <input id="email" type="email" required>
-        <br>
-        <label for="password">Password</label>
-        <br>
-        <input id="password" type="password" required>
-        <br>
-        <label for="repitepassword">Repita password</label>
-        <br>
-        <input id="repitepassword" type="password" required>
-        <br>
+    <section class="container-center">
+        <form>
+            <h1>Registro 🚀</h1>
+            <div>
+                <label for="nombrecompleto">Nombre y Apellido</label>
+                <input id="nombrecompleto" type="text" required>
+            </div>
+        <div>
+            <label for="nacimiento">Fecha de nacimiento</label>
+            <input id="nacimiento" type="date" min="2022-01-01" max="2022-10-17" required>
+        </div>
+        <div>
+            <label for="email">Email</label>
+            <input id="email" type="email" required>
+        </div>
+        <div>
+            <label for="password">Password</label>
+            <input id="password" type="password" required>
+        </div>
+        <div>
+            <label for="repitepassword">Repita password</label>
+            <input id="repitepassword" type="password" required>
+        </div>
         <input type="submit" value="Enviar">
+        <span>¿Ya estas registrado? <a href="./login.html">Iniciar sesión</a> </span>
     </form>
-    <span>¿Ya estas registrado? <a href="./login.html">Iniciar sesión</a> </span>
+    </section>
+    
 </body>
 </html>

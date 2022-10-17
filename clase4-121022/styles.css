@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;700&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+    z-index: 1;
+}
+
+body{
+    width: 100vw;
+    position: relative;
+}
+
+nav{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    width: 100vw;
+    height: 50px;
+    background-image: linear-gradient(to left, #2c3e50, #2b2e3c, #241f28, #181316, #000000);
+}
+nav ul{
+    list-style: none;
+    margin-right: 10px;
+}
+
+nav ul li{
+    display: inline;
+    margin-left: 10px;
+}
+nav ul li a{
+    text-decoration: none;
+    color: #fff;
+}
+nav ul li a:hover{
+text-decoration: underline;
+}
+
+.focus{
+    text-decoration: underline;
+}
+.container-center{
+    width: 100vw;
+    margin-top: 10px;
+}
+
+.container-center main{
+    width: 400px;
+}
+
+.container-center main h1{
+    width: 400px;
+    text-align: center;
+}
+
+.container-center main img{
+    width: 400px;
+}
+
+.container-center form,.container-center main{
+    width: 400px;
+    margin: 0px auto;
+    /* border: 1px solid #000; */
+}
+.container-center form div{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.container-center form input, .container-center form label{
+    width: 100%;
+    margin-top: 4px;
+}
+
+.container-center form input{
+    padding: 8px;
+    border-radius: 5px;
+}
+
+.container-center form input[type=submit]{
+    padding: 12px;
+}
+.container-center form input[type=submit]:hover{
+    padding: 12px;
+    background-color: #2c3e50;
+    color: #fff;
+    cursor: pointer;
+}
+
+.container-center form h1,.container-center form span{
+    display: block;
+    width: 100%;
+    text-align: center;
+} 
