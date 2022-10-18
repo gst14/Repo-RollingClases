@@ -1,27 +1,57 @@
 html{
     scroll-behavior: smooth;
 }
-h1, h2 {
-    text-align: center;
+body{
+    margin: 0px;
+    padding: 0px;
 }
 
-/* h2{
+h1, h2 {
     text-align: center;
-} */
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
 .caja{
-    height: 900px;
-    border: 1px solid #000;
+    height: 850px;
     color: #fff;
 }
 
+.caja h5{
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.caja a{
+    color: #fff;
+}
 #inicio{
-    background-color: #323031;
+    background-color: #2F2963;
 }
 
 #servicios{
-    background-color: #DB3A34;
+    background-color: #454372;
 }
 
 #contacto{
-    background-color: #177E89;
+    background-color: #70877F;
+}
+
+.tercio{
+    height: 33%;
+    width: 100%;
+}
+.sesenta{
+    height: 50%;
+    width: 100%;
+}
+
+.auto-bottom{
+    height: 10px;
+    margin-top: auto;
+}
+
+.caja nav ul {
+    margin: 0;
 }
