@@ -1,0 +1,27 @@
+html{
+    scroll-behavior: smooth;
+}
+h1, h2 {
+    text-align: center;
+}
+
+/* h2{
+    text-align: center;
+} */
+.caja{
+    height: 900px;
+    border: 1px solid #000;
+    color: #fff;
+}
+
+#inicio{
+    background-color: #323031;
+}
+
+#servicios{
+    background-color: #DB3A34;
+}
+
+#contacto{
+    background-color: #177E89;
+}
