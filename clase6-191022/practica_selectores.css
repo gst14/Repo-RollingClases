@@ -1,0 +1,50 @@
+/* Selector por elemento */
+/* Valor 1 */
+h1{ 
+    color: brown;
+}
+/* Selector por clase */
+/* Valor 10 */
+.titulo{
+    color: blueviolet;
+}
+
+/* Selector por id */
+/* Valor 100 */
+#titulo{
+    color: red;
+}
+
+/* ESPECIFICIDAD */
+
+[href="https://www.google.com"]{
+    color: blueviolet;
+    text-decoration: none;
+    color: #000;
+}
+
+[target="_blank"]{
+    background-color: #ABA194;
+}
+
+input[value="js"]{
+    background-color: black;
+    color: brown;
+}
+
+/* Selectores combinados */
+
+/* h1#titulo.titulo{
+    color: lawngreen;
+} */
+.cartel{
+    border: 1px solid #000;
+}
+
+.contenedor p{
+  color: red;
+}
+
+h2{
+    text-align: center;
+}
