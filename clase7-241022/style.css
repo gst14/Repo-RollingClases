@@ -1,0 +1,63 @@
+*{
+    box-sizing: border-box;
+}
+div{
+    width: 200px ;
+    height: 200px ;
+    margin-bottom: 10px;
+    padding: 30px;
+}
+body{
+    margin: 0px;
+    padding: 0%;
+}
+
+div h2{
+    color: #fff;
+}
+.uno{
+    background-color: #2E294E;
+    position: relative;
+    top: 270px;
+    left: 300px;
+}
+.dos{
+    background-color: #F46036;
+}
+.tres{
+    background-color: #1B998B;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.cuatro{
+    background-color: #E71D36;
+}
+
+.contenedor{
+    position: relative;
+    width: 100vw;
+    height: 500px;
+    border: 1px solid #000;
+}
+
+.mensaje{
+    height: 70px;
+    width: 70px;
+    background-color: #1B998B;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.navbar{
+    width: 100vw;
+    background-color: #2E294E;
+    height: 100px;
+    position: sticky;
+    top: 0px;
+    left: 0px;
+    z-index:5 ;
+}
