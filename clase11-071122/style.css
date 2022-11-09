@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;900&display=swap');
+
+body{
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+}
+
+.red{
+    background-color: rgb(184, 176, 7);
+}
+
+.item{
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+}
+
+.columns-ejemplo > :nth-child(odd){
+background-color: #302F4D;
+color: white;
+}
+
+.columns-ejemplo > :nth-child(even){
+background-color: #F0D3F7;
+}
