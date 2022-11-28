@@ -1,0 +1,23 @@
+body{
+    background-color: #000;
+}
+.mi-carrousel{
+    height: 300px;
+    width: 500px;
+}
+
+
+.section{
+    width: 100vw;
+    height: 90vh;
+}
+.section:first-child{
+    background-color: #002626;
+}
+.section:nth-child(2){
+    background-color: #95C623;
+}
+
+.section:nth-child(3){
+    background-color: #558C8C;
+}
