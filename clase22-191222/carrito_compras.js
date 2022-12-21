@@ -9,10 +9,12 @@ console.log(itemsCarrito)
 //     }
 // }
 
-for (let index = 0; index < 5; index++) {
+const cantidadDeItems = 3
+
+for (let index = 0; index < cantidadDeItems; index++) {
     let articuloIngresado = ''
     do {
-        articuloIngresado = prompt('Ingrese articulo: ')
+        articuloIngresado = prompt(`Ingrese articulo (${index+1} de ${cantidadDeItems}): `)
         if(articuloIngresado.trim() != ""){
             itemsCarrito.push( articuloIngresado )
         }
