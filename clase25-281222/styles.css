@@ -1,0 +1,25 @@
+.ausente{
+    color: red;
+}
+.presente{
+    color: green;
+}
+
+#cards{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1px;
+    width: fit-content;
+    height: 50vh;
+    border: 1px solid #000;
+    overflow: scroll;
+}
+
+.card{
+    width:max-content;
+    min-width:  100px;
+    height: 50px;
+    background-color: brown;
+}
