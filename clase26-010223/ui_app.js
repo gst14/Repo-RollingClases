@@ -42,8 +42,8 @@ toastTrigger.onclick = ()=>{
     if(formOk){
         toast = new bootstrap.Toast(toastLiveSuccess)
     }
-    else{
-        toast = new bootstrap.Toast(toastLiveError)
-    }
+    // else{
+    //     toast = new bootstrap.Toast(toastLiveError)
+    // }
     toast.show()
 }
