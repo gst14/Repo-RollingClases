@@ -11,7 +11,9 @@ let playlist = []
 
 formSongHTML.onsubmit = (e)=>{
     const formOk = formIsValid();
+    formValidatedClass='was-validated'
     e.preventDefault()
+    formSongHTML.classList.add(formValidatedClass)
     if(formOk){
         let song = {
             vol: inputSessionNro.value.trim(),
@@ -19,11 +21,14 @@ formSongHTML.onsubmit = (e)=>{
             youtube: inputYoutubeVideo.value.trim()
         }
         if(song.youtube){ // pregunto si tiene un video de youtube cargado
-            listItemsHTML.innerHTML += `<li class="list-group-item">Sesion nro: ${song.vol} - Artista: ${song.artista} - <a target="_blank" href="${song.youtube}">Ver vídeo</a></li>`
+            listItemsHTML.innerHTML += `<li class="list-group-item slide-in-bottom"><b>Sesion nro:</b> ${song.vol} - <b>Artista:</b> ${song.artista} - <a target="_blank" href="${song.youtube}">Ver vídeo</a></li>`
         }else{
-            listItemsHTML.innerHTML += `<li class="list-group-item">Sesion nro: ${song.vol} - Artista: ${song.artista}</li>`
+            listItemsHTML.innerHTML += `<li class="list-group-item slide-in-bottom"><b>Sesion nro:</b> ${song.vol} - <b>Artista:</b> ${song.artista}</li>`
         }
         playlist.push(song)
+        formSongHTML.classList.remove(formValidatedClass);
+        const toast = new bootstrap.Toast(toastLiveSuccess)
+        toast.show()
         formSongHTML.reset()
     }
 }
@@ -34,16 +39,4 @@ function formIsValid(){
         isValid = false;
     }
     return isValid;
-}
-
-toastTrigger.onclick = ()=>{
-    const formOk = formIsValid();
-    let toast = null;
-    if(formOk){
-        toast = new bootstrap.Toast(toastLiveSuccess)
-    }
-    // else{
-    //     toast = new bootstrap.Toast(toastLiveError)
-    // }
-    toast.show()
 }
