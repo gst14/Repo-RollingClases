@@ -1,0 +1,27 @@
+html,
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.custom-img {
+    height: 280px;
+    width: 100%;
+}
+
+
+/* hide scrollbar but allow scrolling */
+
+body {
+    -ms-overflow-style: none;
+    /* for Internet Explorer, Edge */
+    scrollbar-width: none;
+    /* for Firefox */
+    overflow-y: scroll;
+}
+
+element::-webkit-scrollbar {
+    display: none;
+    /* for Chrome, Safari, and Opera */
+}

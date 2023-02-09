@@ -1,0 +1,14 @@
+.vertical-img {
+    width: 400px;
+    height: 500px;
+    object-fit: cover;
+}
+
+.main-color {
+    background-color: #faf4e6;
+}
+
+.image-blurred-edge {
+    /* box-shadow: 100px 100px 13px 8px rgb(251, 210, 59) inset; */
+    box-shadow: inset -10px -10px -10px -20px rgb(251, 210, 59);
+}
