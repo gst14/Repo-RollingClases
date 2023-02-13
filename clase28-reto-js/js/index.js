@@ -65,14 +65,17 @@ if(storeIcecream){// pregunto si storeIcecream tiene algun valor (es decir disti
 }else{
     localStorage.setItem('listIcecream', JSON.stringify(listIcecream))
 }
-
-let filteredIcecream = []
-
 let shoppingCartItems = []
-
+let filteredIcecream = []
 let searchInputDOM = document.getElementById('search-input');
 let cardsContainerDOM = document.getElementById('products-cards');
 let cartCounterDOM = document.getElementById('items-shop');
+
+const storageShoppingCartItems = localStorage.getItem('shopping')
+if (storageShoppingCartItems) { // storageShoppingCartItems es distinto de null
+    shoppingCartItems = JSON.parse(storageShoppingCartItems)
+}
+cartCounterDOM.textContent = shoppingCartItems.length
 
 searchInputDOM.onkeyup = (e)=>{
     let userFilter = (e.target.value).toLowerCase().trim(); // esto es lo que el usuario esta escribiendo en el input de busqueda
