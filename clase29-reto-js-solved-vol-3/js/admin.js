@@ -33,6 +33,8 @@ let formUserAMBDOM = document.getElementById('formEditUser')
 let btnDeleteDOM = document.getElementById('btnDeleteItem')
 let btnNewProductDOM = document.getElementById('btnNewProduct')
 let btnLogoutDOM = document.getElementById('btnLogout')
+let titleSuccessDOM = document.getElementById('title-success')
+let titleErrorDOM = document.getElementById('title-error')
 
 function loadEditProductModal(product){
     productToEdit = product;
@@ -171,10 +173,12 @@ formProducAMBDOM.onsubmit = (e)=>{
         localStorage.setItem('listIcecream', JSON.stringify(listProducts))
         listProducts = JSON.parse(localStorage.getItem('listIcecream'))
         generateTableProductos(listProducts)
+        titleSuccessDOM.textContent = 'Producto editado con exito'
         const toastOkDOM = document.getElementById('toastOk')
         const toast = new bootstrap.Toast(toastOkDOM)
         toast.show()
     }else{
+        titleErrorDOM.textContent = 'Todos los campos son obligatorios'
         const toastErrorDOM = document.getElementById('toastError')
         const toast = new bootstrap.Toast(toastErrorDOM)
         toast.show()
@@ -195,6 +199,7 @@ formUserAMBDOM.onsubmit = (e)=>{
         localStorage.setItem('users', JSON.stringify(listUsers))
         listUsers = JSON.parse(localStorage.getItem('users'))
         generateTableUsers(listUsers)
+        titleSuccessDOM.textContent = 'Usuario editado';
         const toastOkDOM = document.getElementById('toastOk')
         const toast = new bootstrap.Toast(toastOkDOM)
         toast.show()
@@ -211,11 +216,19 @@ btnDeleteDOM.onclick = (e)=>{
         newItems = listProducts.filter( p => p.id != deleteConfig.Id )
         localStorage.setItem('listIcecream', JSON.stringify(newItems))
         listProducts = newItems;
+        titleSuccessDOM.textContent = 'Producto eliminado'
+        const toastOkDOM = document.getElementById('toastOk')
+        const toast = new bootstrap.Toast(toastOkDOM)
+        toast.show()
         generateTableProductos(newItems)
     }else{
         newItems = listUsers.filter( u => u.mail != deleteConfig.mail )
         localStorage.setItem('users',JSON.stringify(newItems))
         listUsers = newItems;
+        titleSuccessDOM.textContent = 'Usuario eliminado';
+        const toastOkDOM = document.getElementById('toastOk')
+        const toast = new bootstrap.Toast(toastOkDOM)
+        toast.show()
         generateTableUsers(newItems)
     }
 }
