@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <title>Local</title>
+</head>
+
+<body>
+    <main class="container-fluid p-0">
+        <nav class="navbar bg-body-tertiary d-flex justify-content-between p-1">
+          <div>
+            <a class="navbar-brand" href="index.html">
+              <img src="https://img.icons8.com/3d-fluency/94/null/dessert.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top"> Heladito fiu fiu Store
+              <span id="items-shop" class="badge text-bg-secondary">Admin</span>
+          </a>
+          </div>
+          <div>
+              <btn id="btnLogout" class="btn" href="/login.html">
+                  <img src="./icons/user_icon.svg" alt="cart"> <span id="items-shop" class="badge text-bg-secondary">Cerrar sesion</span>
+              </btn>
+          </div>
+      </nav>
+        <div>
+            <section class="p-5">
+                <div class="mb-2">
+                    <h3 class="d-inline-block">Productos</h3>
+                    <button class="btn btn-success ms-2" id="btnNewProduct" data-bs-toggle="modal" data-bs-target="#productModal">Agregar <span class="fa fa-solid fa-plus"></span></button>
+                </div>
+                <input type="text" id="search-products" class="form-control" placeholder="Buscar">
+                <table class="table" id="productTable">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Precio</th>
+                            <th scope="col">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="productTableDetail">
+                    </tbody>
+                </table>
+            </section>
+            <section class="p-5">
+                <h3>Users</h3>
+                <div class="mb-3">
+                     <input type="text" id="search-users" class="form-control" placeholder="Buscar">
+                  </div>
+                <table class="table" id="userTable">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Mail</th>
+                            <th scope="col">Admin</th>
+                            <th scope="col">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="userTableDetail">
+                        <tr>
+                            <th scope="row">#</th>
+                            <td>Name</td>
+                            <td>Mail</td>
+                            <td>Admin</td>
+                            <td>
+                                <button class="btn btn-outline-dark" id=""><span class="fa fa-solid fa-pencil"></span></button> 
+                                <button class="btn btn-outline-danger" id=""><span class="fa fa-solid fa-trash"></span></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+        
+    </main>
+    <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Edit product</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="formEditProduct">
+                        <div class="mb-3">
+                          <label for="nameProductForm" class="form-label">Nombre producto</label>
+                          <input type="text" class="form-control" id="nameProductForm">
+                        </div>
+                        <div class="mb-3">
+                          <label for="detailProducForm" class="form-label">Detalle producto</label>
+                          <textarea class="form-control" id="detailProducForm" rows="2"></textarea>
+                        </div>
+                        <div class="mb-3">
+                          <label for="priceProductForm" class="form-label">Precio</label>
+                          <input type="text" class="form-control" id="priceProductForm">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                            <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Guardar</button>
+                        </div>
+                      </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="editUserModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Edit user</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="formEditUser">
+                        <div class="mb-3">
+                          <label for="nameUserForm" class="form-label">Nombre usuario</label>
+                          <input type="text" class="form-control" id="nameUserForm">
+                        </div>
+                        <div class="mb-3">
+                            <label for="emailUserForm" class="form-label">Mail usuario</label>
+                            <input type="text" class="form-control" id="emailUserForm">
+                        </div>
+                        <div class="mb-3">
+                            <label for="typeUserForm" class="form-label">Tipo de usuario</label>
+                            <select class="form-select" id="typeUserForm">
+                                <option value="user">User</option>
+                                <option value="admin">Admin</option>
+                            </select>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                            <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Guardar</button>
+                        </div>
+                      </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="toastOk" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+          <div class="toast-header">
+            <img src="./icons/happy_icon.svg" class="rounded me-2" alt="error icon">
+            <strong class="me-auto">Actualizacion correcta</strong>
+            <small>Ahora</small>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+          </div>
+          <div class="toast-body">
+            La operacion se realizo correctamente :)
+          </div>
+        </div>
+      </div>
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="toastError" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+          <div class="toast-header">
+            <img src="./icons/error_icon.svg" class="rounded me-2" alt="error icon">
+            <strong class="me-auto">Error</strong>
+            <small>Ahora</small>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+          </div>
+          <div class="toast-body">
+            Algun campo esta imcompleto. Actualizacion no realizada.
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="confirmDelete" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Advertencia</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              Esta operacion es irreversible. ¿Estas seguro de eliminar este item?
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+              <button type="button" class="btn btn-danger" id="btnDeleteItem" data-bs-dismiss="modal">Confirmar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    <script src="./js/admin.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/9f538b4106.js" defer crossorigin="anonymous"></script>
+</body>
+
+</html>
