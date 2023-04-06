@@ -32,8 +32,8 @@ function getProducts() {
                         <td>${product.precio}</td>
                         <td>${product.stock}</td>
                         <td class="text-center">
-                            <button class="btn btn-primary" onclick="editProduct(${product.id})">Editar</button>
-                            <button class="btn btn-danger" onclick="deleteProduct(${product.id})">Eliminar</button>
+                            <button class="btn btn-primary" onclick="editProduct('${product.id}')">Editar</button>
+                            <button class="btn btn-danger" onclick="deleteProduct('${product.id}')">Eliminar</button>
                         </td>
                     </tr>
                 `;
@@ -50,7 +50,8 @@ function getProduct(id) {
 }
 
 function editProduct(id) {
-    fetch(`http://localhost:8080/productos/${id}`)
+    const url = `http://localhost:8080/productos/${id}`;
+    fetch(url)
         .then(res => res.json())
         .then(data => {
             generateFormProduct(false, data);
@@ -59,7 +60,8 @@ function editProduct(id) {
 
 
 function deleteProduct(id) {
-    fetch(`http://localhost:8080/productos/${id}`, {
+    const url = `http://localhost:8080/productos/${id}`;    
+    fetch(url, {
         method: 'DELETE'
     })
         .then(res => res.json())
@@ -75,18 +77,21 @@ function generateFormProduct(isCreate = true, product = {}) {
     const formTitle =  document.getElementById('formTitle');
     formTitle.style.display = 'block';
     formTitle.innerHTML = isCreate ? 'Agregar producto' : 'Editar producto';
+    const idInputName = isCreate ? 'txtName' : `txtName-${product.id}`;
+    const idInputPrice = isCreate ? 'txtPrice' : `txtPrice-${product.id}`;
+    const idInputStock = isCreate ? 'txtStock' : `txtStock-${product.id}`;
     formProductDOM.innerHTML = `
         <div class="mb-3">
             <label for="txtName" class="form-label">Nombre</label>
-            <input type="text" class="form-control" value="${product?.nombre || ""}" id="txtName" name="txtName">
+            <input type="text" class="form-control" value="${product?.nombre || ""}" id="${idInputName}" name="txtName">
         </div>
         <div class="mb-3">
             <label for="txtPrice" class="form-label">Precio</label>
-            <input type="number" class="form-control" value="${product?.precio || ""}" id="txtPrice" name="txtPrice">
+            <input type="number" class="form-control" value="${product?.precio || ""}" id="${idInputPrice}" name="txtPrice">
         </div>
         <div class="mb-3">
             <label for="txtStock" class="form-label">Stock</label>
-            <input type="number" class="form-control" value="${product?.stock || ""}" id="txtStock" name="txtStock">
+            <input type="number" class="form-control" value="${product?.stock || ""}" id="${idInputStock}" name="txtStock">
         </div>
         `;
     if (isCreate) {
@@ -114,9 +119,19 @@ function disableFormProduct() {
 
 function submitFormProduct(e) {
     e.preventDefault();
-    const txtName = document.getElementById('txtName');
-    const txtPrice = document.getElementById('txtPrice');
-    const txtStock = document.getElementById('txtStock');
+    const idsInputs = {};
+    if(mode === 'create') {
+        idsInputs.txtNameId = 'txtName';
+        idsInputs.txtPriceId = 'txtPrice';
+        idsInputs.txtStockId = 'txtStock';
+    } else {
+        idsInputs.txtNameId = `txtName-${currentProduct.id}`;
+        idsInputs.txtPriceId = `txtPrice-${currentProduct.id}`;
+        idsInputs.txtStockId = `txtStock-${currentProduct.id}`;
+    }
+    const txtName = document.getElementById(idsInputs.txtNameId);
+    const txtPrice = document.getElementById(idsInputs.txtPriceId);
+    const txtStock = document.getElementById(idsInputs.txtStockId);
     const product = {
         nombre: txtName.value,
         precio: txtPrice.value,
